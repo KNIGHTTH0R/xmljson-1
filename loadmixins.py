@@ -2,9 +2,12 @@
 import json
 import xmltodict
 import jsonschema
+from lxml import etree
 
 
-SCHEMA = {
+class JsonMixin():
+    """Provides loading json data from file to python objects."""
+    schema = {
         "type": "object",
         "properties": {
             "projects": {}
@@ -13,22 +16,37 @@ SCHEMA = {
         "required": ["projects"]
     }
 
-
-class JsonMixin():
-    """Provides loading json data from file to python objects."""
     def load_json(self, path):
-        with open(path) as file:
-            data = json.load(file)
-            jsonschema.validate(data, SCHEMA)
-            self.data = data
-            return data
+        data = json.load(open(path))
+
+        try:
+            jsonschema.validate(data, self.schema)
+        except jsonschema.SchemaError as e:
+            print e
+            exit(1)
+
+        self.data = data
+        return data
 
 
 class XmlMixin():
     """Provides loading xml data from file to python objects."""
     def load_xml(self, path):
-        with open(path) as file:
-            data = json.loads(json.dumps(xmltodict.parse(file)))
-            jsonschema.validate(data, SCHEMA)
-            self.data = data
-            return data
+        schema_doc = etree.parse('data.xsd')
+
+        try:
+            schema = etree.XMLSchema(schema_doc)
+        except etree.XMLSchemaParseError as e:
+            print e
+            exit(1)
+
+        try:
+            schema.assertValid(etree.parse(path))
+        except etree.DocumentInvalid as e:
+            print e
+            exit(1)
+
+        xml_file = open(path)
+        data = xmltodict.parse(xml_file)
+        self.data = data
+        return data

@@ -11,7 +11,7 @@
               <xs:element name="modules">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="module">
+                    <xs:element name="Ipsum">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element type="xs:string" name="name"/>
@@ -26,11 +26,48 @@
               <xs:element name="dependencies">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="dependence">
+                    <xs:element name="lxml">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element type="xs:string" name="name"/>
                           <xs:element type="xs:string" name="version"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bars">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="version"/>
+              <xs:element type="xs:string" name="vendor"/>
+              <xs:element name="modules">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="loadmixins">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:float" name="version"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="dependencies">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="xmltodict">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:float" name="version"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>

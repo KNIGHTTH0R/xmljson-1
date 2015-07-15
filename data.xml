@@ -19,4 +19,21 @@
       </lxml>
     </dependencies>
   </Lorem>
+  <Bars>
+    <name>Bars</name>
+    <version>2.5.1</version>
+    <vendor>Bars-open</vendor>
+    <modules>
+      <loadmixins>
+        <name>loadmixins</name>
+        <version>1.0</version>
+      </loadmixins>
+    </modules>
+    <dependencies>
+      <xmltodict>
+        <name>xmltodict</name>
+        <version>1.1</version>
+      </xmltodict>
+    </dependencies>
+  </Bars>
 </projects>
