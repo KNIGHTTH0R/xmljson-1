@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE contacts SYSTEM "attrs.dtd" >
+  <Lorem>
+    <name>Lorem</name>
+    <version>1.0</version>
+    <vendor>Me</vendor>
+    <modules>
+      <Ipsum>
+        <name>Ipsum</name>
+        <version>1.0</version>
+        <vendor>Google corp.</vendor>
+      </Ipsum>
+    </modules>
+    <dependencies>
+      <lxml>
+        <name>lxml</name>
+        <version>3.3.6</version>
+      </lxml>
+    </dependencies>
+  </Lorem>

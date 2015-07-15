@@ -1,0 +1,20 @@
+{
+    "Lorem": {
+      "name": "Lorem",
+      "version": "1.0",
+      "vendor": "Me",
+      "modules": [
+        {
+          "name": "Ipsum",
+          "version": "1.0",
+          "vendor": "Google corp."
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "lxml",
+          "version": "3.3.6"
+        }
+      ]
+    }
+}
