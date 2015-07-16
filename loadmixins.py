@@ -5,7 +5,7 @@ import jsonschema
 from lxml import etree
 
 
-class JsonMixin():
+class JsonMixin(object):
     """Provides loading json data from file to python objects."""
     schema = {
         "type": "object",
@@ -29,7 +29,7 @@ class JsonMixin():
         return data
 
 
-class XmlMixin():
+class XmlMixin(object):
     """Provides loading xml data from file to python objects."""
     def load_xml(self, path):
         schema_doc = etree.parse('data.xsd')
